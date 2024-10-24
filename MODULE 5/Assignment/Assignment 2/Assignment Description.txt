@@ -1,0 +1,1 @@
+The assignment is for to development of a responsive, multi-page website with a fixed navigation bar, footer, logo, and favicon. Key features include mobile responsiveness with a hamburger menu, dropdowns, hover effects for buttons, scrolling text, and consistent theme integration across pages like Home, About Us, Sign-up, Sign-in, and Contact Us
