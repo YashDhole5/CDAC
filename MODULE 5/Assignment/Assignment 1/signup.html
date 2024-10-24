@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f4f8;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .signup-container {
+      width: 400px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .signup-container h1 {
+      margin-bottom: 20px;
+      font-weight: 500;
+      font-size: 32px;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .input-group input:focus {
+      border-color: #5c67f2;
+      outline: none;
+    }
+
+    .login-text {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .login-text a {
+      color: #5c67f2;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .login-text a:hover {
+      text-decoration: underline;
+    }
+
+    .signup-button {
+      width: 100%;
+      background-color: #5c67f2;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    .signup-button:hover {
+      background-color: #4855c4;
+    }
+
+    .error-message {
+      margin-top: 10px;
+      color: red;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="signup-container">
+    <h1>Sign Up</h1>
+    <form action="#">
+      <div class="input-group">
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" name="first-name" required>
+      </div>
+      <div class="input-group">
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" name="last-name" required>
+      </div>
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit" class="signup-button">Sign Up</button>
+      <p class="login-text">Already a member? <a href="#">Log In</a></p>
+      
+    </form>
+  </div>
+</body>
+</html>
