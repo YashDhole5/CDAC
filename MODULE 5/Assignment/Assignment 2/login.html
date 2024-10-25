@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #e9eef2;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .login-container {
+      display: flex;
+      width: 600px;
+      height: 300px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .left-panel {
+      background-color: #213154;
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      padding: 20px;
+    }
+
+    .left-panel h2 {
+      margin-bottom: 10px;
+      font-weight: 500;
+      font-size: 24px;
+    }
+
+    .left-panel p {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .left-panel button {
+      background-color: white;
+      color: #1d1f52;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .left-panel button:hover {
+      background-color: #e8f5e9;
+    }
+
+    .right-panel {
+      background-color: white;
+      width: 60%;
+      padding: 30px;
+    }
+
+    .right-panel h3 {
+      margin-bottom: 20px;
+      font-weight: 500;
+      font-size: 20px;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    .input-group input:focus {
+      border-color: #14163d;
+      outline: none;
+    }
+
+    .right-panel .forgot-password {
+      margin-top: 10px;
+      font-size: 14px;
+      text-align: right;
+    }
+
+    .right-panel .forgot-password a {
+      color: #132746;
+      text-decoration: none;
+    }
+
+    .login-button {
+      width: 100%;
+      background-color: #14154e;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .login-button:hover {
+      background-color: #e7d727;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="left-panel">
+      <h2>Welcome!</h2>
+      <p>Create your account. For Free!</p>
+      <button>Sign Up</button>
+    </div>
+    <div class="right-panel">
+      <h3>Login</h3>
+      <form action="#">
+        <div class="input-group">
+          <input type="text" placeholder="Username/Email address" required>
+        </div>
+        <div class="input-group">
+          <input type="password" placeholder="Password" required>
+        </div>
+        <p class="forgot-password"><a href="#">Forgot password?</a></p>
+        <button type="submit" class="login-button">Sign In</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

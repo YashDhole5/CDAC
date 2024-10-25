@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f4f8;
+    }
+
+    .contact-container {
+      display: flex;
+      width: 800px;
+      height: 500px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      background-color: white;
+    }
+
+    /* Left Panel */
+    .left-panel {
+      background-color: #12164d;
+      color: white;
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .left-panel h2 {
+      margin-bottom: 10px;
+      font-weight: 500;
+      font-size: 28px;
+    }
+
+    .left-panel p {
+      margin-bottom: 25px;
+      font-size: 16px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .contact-info {
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .contact-info div {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .contact-info div i {
+      font-size: 24px;
+      margin-right: 15px;
+      color: #e0e0e0;
+    }
+
+    .contact-info div span {
+      font-size: 15px;
+    }
+
+    /* Right Panel */
+    .right-panel {
+      width: 60%;
+      padding: 40px;
+    }
+
+    .right-panel h3 {
+      margin-bottom: 20px;
+      font-weight: 500;
+      font-size: 22px;
+      color: #333;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    .input-group input,
+    .input-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 16px;
+      resize: none;
+    }
+
+    .input-group textarea {
+      height: 100px;
+    }
+
+    .input-group input:focus,
+    .input-group textarea:focus {
+      border-color: #5c67f2;
+      outline: none;
+    }
+
+    .submit-button {
+      width: 100%;
+      background-color: #121648;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    .submit-button:hover {
+      background-color: #4855c4;
+    }
+  </style>
+</head>
+<body>
+  <div class="contact-container">
+    <!-- Left Panel -->
+    <div class="left-panel">
+      <h2>Contact Us</h2>
+      <p>Feel free to get in touch with us for any queries or assistance. We're here to help!</p>
+      <div class="contact-info">
+        <div>
+          <i class="fas fa-phone-alt"></i>
+          <span>+1 234 567 890</span>
+        </div>
+        <div>
+          <i class="fas fa-envelope"></i>
+          <span>support@cdac.com</span>
+        </div>
+        <div>
+          <i class="fas fa-map-marker-alt"></i>
+          <span>CDAC, Juhu, India</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="right-panel">
+      <h3>Get in Touch</h3>
+      <form action="#">
+        <div class="input-group">
+          <input type="text" placeholder="Your Name" required>
+        </div>
+        <div class="input-group">
+          <input type="email" placeholder="Your Email" required>
+        </div>
+        <div class="input-group">
+          <textarea placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="submit-button">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
