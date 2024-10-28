@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Submission</title>
+  <style>
+    body {
+      background-color: #eef2f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .form-container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .output {
+      margin-top: 20px;
+    }
+  </style>
+  <script>
+    function displayFormValues() {
+      const firstName = document.getElementById('firstName').value;
+      const lastName = document.getElementById('lastName').value;
+      const contactNo = document.getElementById('contactNo').value;
+      const emailId = document.getElementById('emailId').value;
+
+      document.getElementById('output').innerHTML = 
+        `<strong>First Name:</strong> ${firstName}<br>
+         <strong>Last Name:</strong> ${lastName}<br>
+         <strong>Contact No:</strong> ${contactNo}<br>
+         <strong>Email ID:</strong> ${emailId}`;
+    }
+  </script>
+</head>
+<body>
+  <div class="form-container">
+    <form onsubmit="event.preventDefault(); displayFormValues();">
+      <input type="text" id="firstName" placeholder="First Name" required>
+      <input type="text" id="lastName" placeholder="Last Name" required>
+      <input type="text" id="contactNo" placeholder="Contact Number" required>
+      <input type="email" id="emailId" placeholder="Email ID" required>
+      <button type="submit">Submit</button>
+    </form>
+    <div class="output" id="output"></div>
+  </div>
+</body>
+</html>
