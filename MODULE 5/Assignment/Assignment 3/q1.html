@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paragraph Style Modifier</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f4f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+    p {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+  <script>
+    function changeStyle() {
+      const paragraph = document.getElementById('para');
+      paragraph.style.fontFamily = 'Georgia, serif';
+      paragraph.style.fontSize = '22px';
+      paragraph.style.color = '#FF6347';
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <p id="para">
+        It is rightly said that being disciplined is essential in life. When a person leads a disciplined life, they set an easy path to success. They will develop an approach to happiness and a beautiful future ahead. Being disciplined is the practice of having a scheduled daily routine which helps an individual to be punctual and hard-working. An individual is taught what being disciplined means from the time they are young. Even though discipline takes a lot of effort, the advantages of a disciplined life make it a worthwhile endeavour.
+    </p>
+    <button onclick="changeStyle()">Change Style</button>
+  </div>
+</body>
+</html>
