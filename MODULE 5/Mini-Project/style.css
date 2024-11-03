@@ -1,0 +1,21 @@
+/* style.css */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(to right, #df36eb, #0643db); /* Example gradient */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+}
+
+footer {
+    margin-top: auto; /* Push footer to the bottom */
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent footer */
+}
