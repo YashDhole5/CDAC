@@ -6,23 +6,38 @@
     <title>Freelancer Platform - Register</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        function register() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const users = JSON.parse(localStorage.getItem("users")) || [];
+
+            
+            const userExists = users.some(user => user.email === email);
+            if (userExists) {
+                alert("User already registered! Please log in.");
+                window.location.href = "login.html";
+                return;
+            }
+
+            // Save new user
+            users.push({ name, email, password });
+            localStorage.setItem("users", JSON.stringify(users));
+            alert("Registration successful! Please log in.");
+            window.location.href = "login.html";
+        }
+    </script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Freelancer Platform</a>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-            </ul>
-        </div>
+        <a class="navbar-brand" href="index.html">Freelancer Platform</a>
+        
     </nav>
-    
+
     <div class="container mt-5">
         <h2>Register</h2>
-        <form>
+        <form onsubmit="event.preventDefault(); register();">
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" class="form-control" id="name" required>
