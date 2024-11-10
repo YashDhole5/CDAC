@@ -170,7 +170,7 @@ function closeProjectDetails() {
     document.getElementById('projectDetailsPanel').style.display = 'none';
 }
 
-// Post Project Function
+
 async function postProject(event) {
     event.preventDefault();
 
@@ -197,3 +197,4 @@ async function postProject(event) {
         alert('An error occurred while posting the project.');
     }
 }
+
