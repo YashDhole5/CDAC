@@ -7,35 +7,67 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body onload="loadMessages()">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Freelancer Platform</a>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-            </ul>
-        </div>
+        <a class="navbar-brand" href="index.html">Freelancer Platform</a>
+        
     </nav>
-    
+
     <div class="container mt-5">
         <h2>Negotiation Space</h2>
+        <div id="projectInfo"></div>
         <div class="form-group">
             <label for="message">Message</label>
             <textarea class="form-control" id="message" rows="4"></textarea>
         </div>
-        <button class="btn btn-primary">Send Message</button>
+        <button class="btn btn-primary" onclick="sendMessage()">Send Message</button>
         <hr>
         <h4>Previous Messages</h4>
-        <div class="border p-3">
-            <strong>Freelancer:</strong> I'm interested in your project. Can we discuss the details?
-        </div>
-        <div class="border p-3 mt-2">
-            <strong>You:</strong> Sure! I can provide more information.
-        </div>
+        <div id="messagesContainer"></div>
     </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get("projectId");
+        const currentUserEmail = localStorage.getItem("currentUser");
+        const users = JSON.parse(localStorage.getItem("users")) || [];
+        const currentUser = users.find(user => user.email === currentUserEmail);
+
+        function loadMessages() {
+            const projects = JSON.parse(localStorage.getItem("projects")) || [];
+            const project = projects[projectId];
+
+            document.getElementById("projectInfo").innerHTML = `<h5>Negotiation for: ${project.title}</h5>`;
+
+            const messages = JSON.parse(localStorage.getItem(`messages_${projectId}`)) || [];
+            const messagesContainer = document.getElementById("messagesContainer");
+            messagesContainer.innerHTML = "";
+
+            messages.forEach(msg => {
+                const msgDiv = document.createElement("div");
+                msgDiv.classList.add("border", "p-3", "mt-2");
+                msgDiv.innerHTML = `<strong>${msg.sender}:</strong> ${msg.content}`;
+                messagesContainer.appendChild(msgDiv);
+            });
+        }
+
+        function sendMessage() {
+            const messageContent = document.getElementById("message").value;
+            if (!messageContent) return alert("Please enter a message!");
+
+            const messages = JSON.parse(localStorage.getItem(`messages_${projectId}`)) || [];
+
+            const message = {
+                sender: currentUser ? currentUser.name : "Unknown",
+                content: messageContent
+            };
+            messages.push(message);
+
+            localStorage.setItem(`messages_${projectId}`, JSON.stringify(messages));
+
+            document.getElementById("message").value = "";
+            loadMessages();
+        }
+    </script>
 </body>
 </html>
