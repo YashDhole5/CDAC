@@ -136,6 +136,35 @@ function deleteLocalProject(index) {
         alert('Project deleted successfully!');
     }
 }
+async function editProject(projectId) {
+    const newTitle = prompt("Enter new title:");
+    const newDescription = prompt("Enter new description:");
+
+    if (newTitle && newDescription) {
+        try {
+            const response = await fetch(`http://localhost:3000/api/edit/${projectId}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    title: newTitle,
+                    description: newDescription
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to update project');
+            }
+
+            const data = await response.json();
+            alert(data.message);
+            loadProjects();
+        } catch (error) {
+            console.error('Error editing project:', error);
+        }
+    }
+}
 
 function deleteProject(projectId) {
     if (confirm("Are you sure you want to delete this project?")) {
@@ -197,4 +226,3 @@ async function postProject(event) {
         alert('An error occurred while posting the project.');
     }
 }
-
