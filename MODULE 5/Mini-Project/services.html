@@ -25,20 +25,21 @@
     </nav>
     
     <div class="container mt-5">
-        <h2>Services</h2>
+        <h2>Projects for Freelancing</h2>
         <div id="projectList" class="row">
             <!-- Project cards will be inserted here by JavaScript -->
         </div>
     </div>
 
     <!-- Project Details Panel (Initially Hidden) -->
-    <div id="projectDetailsPanel" class="panel panel-default" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 50%; background: white; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); z-index: 9999;">
+    <div id="projectDetailsPanel" class="panel panel-default" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 50%; background: #df36eb; padding: 20px; box-shadow: 0 4px 8px #0643db; z-index: 9999;">
         <h4>Project Details</h4>
         <h5 id="projectPanelTitle"></h5>
         <p id="projectPanelDescription"></p>
-        <button class="btn btn-secondary" onclick="closeProjectPanel()">Close</button>
+        <button class="btn btn-secondary" onclick="closeProjectPanelAndOpenNegotiation()">Negotiate Now</button>
     </div>
 
+    
     <style>
         /* Styling for the details panel */
         .project-details-panel {
@@ -47,11 +48,11 @@
             top: 0;
             width: 300px;
             height: 100%;
-            background-color: #f8f9fa;
-            border-left: 1px solid #ddd;
+            background-color: #df36eb;
+            border-left: 1px solid #0643db;
             padding: 20px;
             overflow-y: auto;
-            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+            box-shadow: -2px 0 5px rgba(32, 29, 194, 0.5);
             display: none; /* Hidden by default */
         }
         
