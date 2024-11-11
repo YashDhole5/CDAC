@@ -110,6 +110,11 @@ async function loadProjects() {
 async function viewProjectDetails(projectId) {
     try {
         const response = await fetch(`http://localhost:3000/projects/${projectId}`);
+        
+        if (!response.ok) {
+            throw new Error(`Project not found with ID ${projectId}`);
+        }
+        
         const project = await response.json();
 
         // Populate the panel with project details
@@ -122,6 +127,7 @@ async function viewProjectDetails(projectId) {
         console.error('Error fetching project details:', error);
     }
 }
+
 
 
 // Delete Project from Local Storage (if applicable)
@@ -193,10 +199,13 @@ function deleteProject(projectId) {
 }
 
 
-// Close Project Details Panel
-function closeProjectDetails() {
-    // Hide the project details panel
+// function closeProjectPanel() {
+//     document.getElementById('projectDetailsPanel').style.display = 'none';
+// }
+
+function closeProjectPanelAndOpenNegotiation() {
     document.getElementById('projectDetailsPanel').style.display = 'none';
+    window.location.href = 'negotiation.html';
 }
 
 
@@ -226,3 +235,6 @@ async function postProject(event) {
         alert('An error occurred while posting the project.');
     }
 }
+
+
+
