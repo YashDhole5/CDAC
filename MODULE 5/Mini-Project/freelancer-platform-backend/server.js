@@ -44,6 +44,21 @@ app.get('/projects', (req, res) => {
     });
 });
 
+// to edit project
+app.put('/api/edit/:id', (req, res) => {
+    const projectId = req.params.id;
+    const { title, description } = req.body;
+    
+    const query = 'UPDATE projects SET title = ?, description = ? WHERE id = ?';
+    db.query(query, [title, description, projectId], (err, result) => {
+        if (err) {
+            console.error('Error updating project: ', err);
+            return res.status(500).json({ message: 'Error updating project' });
+        }
+        res.json({ message: 'Project updated successfully' });
+    });
+});
+
 
 
 app.delete('/api/delete-project/:id', (req, res) => {
