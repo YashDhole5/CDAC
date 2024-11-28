@@ -188,7 +188,7 @@ function App() {
                   onChange={(e) => toggleLikedOnly(e.target.checked)}
                 />
                 <span className="toggle-slider"></span>
-                <span className="toggle-text">Interested Sharks</span>
+                <span className="toggle-text">Interested Startups</span>
               </label>
             </div>
 
