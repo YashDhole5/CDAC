@@ -208,7 +208,7 @@ function App() {
                     >
                       ❤ Like
                     </button>
-                    <button className="info-button">More Info</button>
+                    <button className="info-button">Let's Meet</button>
                   </div>
                 </div>
               ))}
