@@ -1,0 +1,251 @@
+/* App container */
+.app-container {
+  display: flex;
+  height: 100vh;
+  background-color: #e0f2fe;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 200px;
+  background-color: #2563eb;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.sidebar button {
+  background: none;
+  border: none;
+  color: #dbeafe;
+  text-align: left;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.sidebar button.active,
+.sidebar button:hover {
+  color: white;
+  font-weight: bold;
+}
+
+/* Main content area */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #ffffff;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: center;
+  
+
+
+  
+}
+
+
+
+/* Header section */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logout-button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.logout-button:hover {
+  background-color: #1e40af;
+}
+
+
+.request-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.card h4 {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+
+.approve-button:hover {
+  background-color: #0288d1;
+  color: #fff;
+} 
+
+
+/* Popup styles */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content button {
+  margin: 10px;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.popup-content button:first-of-type {
+  background: #2563eb;
+  color: white;
+}
+
+.popup-content button:last-of-type {
+  background: #f87171;
+  color: white;
+}
+
+
+
+.request-card {
+  background-color: white;
+  width: 80%;  /*Make the card proportionate */
+  max-width: 900px; /* Maximum width to keep it responsive */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-self: center;
+
+}
+
+.shark-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0033cc;
+  margin: 0;
+}
+
+/* Button group styling */
+.button-group {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+/* Button styling */
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.approve-button {
+  background-color: #28a745; /* Green button */
+  color: white;
+}
+
+.decline-button {
+  background-color: #dc3545; /* Red button */
+  color: white;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+
+
+
+/* Profile pane container */
+.profile-pane {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 400px;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  
+}
+
+/* Pane header */
+.profile-pane-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.close-button {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.close-button:hover {
+  background: #a71d2a;
+}
+
+/* Pane content */
+.profile-pane-content {
+  flex: 1;
+  overflow-y: auto;
+  font-size: 16px;
+}
+
+.profile-pane-content p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
